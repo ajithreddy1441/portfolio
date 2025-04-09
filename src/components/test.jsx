@@ -6,7 +6,7 @@ export function BackgroundGradientAnimationDemo() {
   return (
     <BackgroundGradientAnimation>
       {/* Render the Home component on top of the background */}
-      <div className="absolute inset-0 z-50 pointer-events-none">
+      <div className="absolute inset-0 z-50">
         <Home />
       </div>
     </BackgroundGradientAnimation>
