@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Music2, Sun } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
 import profileImage from '../assets/Dp.jpg';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -31,10 +32,30 @@ function Home() {
     <div className="min-h-screen text-white p-8 flex flex-col items-center">
       {/* Navigation */}
       <nav className="w-full max-w-4xl flex justify-center gap-8 mb-24 text-gray-400">
-        <a href="#" className="text-white">Home</a>
-        <a href="#" className="hover:text-white transition-colors">Projects</a>
-        <a href="#" className="hover:text-white transition-colors">Music</a>
-      </nav>
+  <Link 
+    to="/" 
+    className="group relative text-white"
+  >
+    Home
+    <span className={`absolute left-0 -bottom-1 h-0.5 bg-purple-500 transition-all duration-300 ${location.pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+  </Link>
+  
+  <Link 
+    to="/projects" 
+    className="group relative hover:text-white transition-colors"
+  >
+    Projects
+    <span className={`absolute left-0 -bottom-1 h-0.5 bg-purple-500 transition-all duration-300 ${location.pathname === '/projects' ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+  </Link>
+  
+  <Link 
+    to="#" 
+    className="group relative hover:text-white transition-colors"
+  >
+    Skills
+    <span className={`absolute left-0 -bottom-1 h-0.5 bg-purple-500 transition-all duration-300 ${location.pathname === '#' ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+  </Link>
+</nav>
 
       {/* Main Content */}
       <main className="w-full max-w-2xl flex flex-col items-center text-center mt-18">
@@ -45,7 +66,7 @@ function Home() {
           className="w-32 h-32 rounded-full border-4 border-yellow-300 mb-6 object-cover"
         />
         <p className="text-xl text-white mb-6">
-          Hey! I'm <span className="text-blue-400">Ajith Reddy,</span>
+          Hey! I'm <span className="text-yellow-300 font-bold">Ajith Reddy,</span>
         </p>
         <div className="bg-gradient-to-r to-blue-400 from-purple-500 text-black w-max text-[4vw] sm:text-sm lg:text-base py-1 px-2 rounded font-bold mb-4">
           <Typewriter
@@ -63,13 +84,13 @@ function Home() {
         <div className="flex gap-4 mb-10 mt-4">
           <button
             onClick={openResume}
-            className="bg-blue-400 text-white py-2 px-6 rounded hover:bg-blue-600 transition-colors font-bold"
+            className="bg-blue-400 text-white py-2 px-6 rounded hover:bg-purple-600 transition-colors font-bold"
           >
             Resume
           </button>
           <button
             onClick={() => alert('About Section Placeholder')}
-            className="bg-blue-400 text-white py-2 px-6 rounded hover:bg-blue-600 transition-colors font-bold"
+            className="bg-blue-400 text-white py-2 px-6 rounded hover:bg-purple-600 transition-colors font-bold"
           >
             About
           </button>
@@ -80,13 +101,13 @@ function Home() {
           <a href="#" className="hover:text-gray-300 transition-colors">
             <Github size={24} />
           </a>
-          <a href="https://www.linkedin.com/in/ajith-kumar-reddy-syamala-11954424b/" className="hover:text-gray-300 transition-colors">
+          <a href="#" className="hover:text-gray-300 transition-colors">
             <Linkedin size={24} />
           </a>
           <a href="#" className="hover:text-gray-300 transition-colors">
             <Music2 size={24} />
           </a>
-          <a href="ajithreddy1441@gmail.com" className="hover:text-gray-300 transition-colors">
+          <a href="#" className="hover:text-gray-300 transition-colors">
             <Mail size={24} />
           </a>
         </div>
